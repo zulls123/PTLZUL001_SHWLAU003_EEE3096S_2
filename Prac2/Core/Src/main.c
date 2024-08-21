@@ -147,9 +147,9 @@ int main(void)
   HAL_TIM_OC_Start(&htim2, TIM_CHANNEL_1);
 
 
-
   // TODO: Start DMA in IT mode on TIM2->CH1; Source is LUT and Dest is TIM3->CCR3; start with Sine LUT
-
+HAL_DMA_Start_IT(&hdma_tim2_ch1, (uint32_t)Sin_LUT, DestAddress, NS);
+//feeds the LUT values into the PWM generator tim3 based on tim2 timing
 
   // TODO: Write current waveform to LCD ("Sine")
   delay(3000);
