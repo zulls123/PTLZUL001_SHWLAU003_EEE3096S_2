@@ -56,7 +56,8 @@ DMA_HandleTypeDef hdma_tim2_ch1;
 // TODO: Add code for global variables, including LUTs
 
 uint32_t Sin_LUT[NS] = 
-    {511, 536, 562, 587, 612, 636, 661, 685, 708, 731, 754, 776, 797, 818, 838, 857, 875, 892, 909, 924, 938, 
+    {511, 536, 562, 587, 612, 636, 661,
+     685, 708, 731, 754, 776, 797, 818, 838, 857, 875, 892, 909, 924, 938, 
     952, 964, 975, 985, 994, 1002, 1008, 1014, 1018, 1021, 1022, 1022, 1022, 1019, 1016, 1011, 1005, 998, 990, 
     980, 970, 958, 945, 931, 916, 901, 884, 866, 847, 828, 808, 787, 765, 743, 720, 696, 673, 648, 624, 599, 
     574, 549, 524, 498, 473, 448, 423, 398, 374, 349, 326, 302, 279, 257, 235, 214, 194, 175, 156, 138, 121, 
@@ -143,6 +144,8 @@ int main(void)
 
 
   // TODO: Start TIM2 in Output Compare (OC) mode on channel 1.
+  HAL_TIM_OC_Start(&htim2, TIM_CHANNEL_1);
+
 
 
   // TODO: Start DMA in IT mode on TIM2->CH1; Source is LUT and Dest is TIM3->CCR3; start with Sine LUT
