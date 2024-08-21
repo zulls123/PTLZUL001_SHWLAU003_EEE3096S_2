@@ -24,10 +24,6 @@
 #include <stdio.h>
 #include "stm32f0xx.h"
 
-//for testing purposes
-
-#include <lcd_stm32f0.h>
-#include "lcd_stm32f0.c"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -38,9 +34,9 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 // TODO: Add values for below variables
-#define NS    // Number of samples in LUT
-#define TIM2CLK   // STM Clock frequency
-#define F_SIGNAL  // Frequency of output analog signal
+#define NS = 128;   // Number of samples in LUT
+#define TIM2CLK = 8e3;  // STM Clock frequency 
+#define F_SIGNAL  // Frequency of output analog signal - I think based off our circuit?
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -56,9 +52,29 @@ DMA_HandleTypeDef hdma_tim2_ch1;
 /* USER CODE BEGIN PV */
 // TODO: Add code for global variables, including LUTs
 
-uint32_t Sin_LUT[NS] = {};
-uint32_t saw_LUT[NS] = {};
-uint32_t triangle_LUT[NS] = {};
+uint32_t Sin_LUT[NS] = 
+    {511, 536, 562, 587, 612, 636, 661, 685, 708, 731, 754, 776, 797, 818, 838, 857, 875, 892, 909, 924, 938, 
+    952, 964, 975, 985, 994, 1002, 1008, 1014, 1018, 1021, 1022, 1022, 1022, 1019, 1016, 1011, 1005, 998, 990, 
+    980, 970, 958, 945, 931, 916, 901, 884, 866, 847, 828, 808, 787, 765, 743, 720, 696, 673, 648, 624, 599, 
+    574, 549, 524, 498, 473, 448, 423, 398, 374, 349, 326, 302, 279, 257, 235, 214, 194, 175, 156, 138, 121, 
+    106, 91, 77, 64, 52, 42, 32, 24, 17, 11, 6, 3, 0, 0, 0, 1, 4, 8, 14, 20, 28, 37, 47, 58, 70, 84, 98, 113, 
+    130, 147, 165, 184, 204, 225, 246, 268, 291, 314, 337, 361, 386, 410, 435, 460, 486, 511};
+uint32_t saw_LUT[NS] = 
+    {0, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 153, 161, 169, 177, 185, 
+    193, 201, 209, 217, 225, 233, 241, 249, 257, 265, 273, 281, 289, 298, 306, 314, 322, 330, 338, 346, 354, 
+    362, 370, 378, 386, 394, 402, 410, 418, 426, 434, 443, 451, 459, 467, 475, 483, 491, 499, 507, 515, 523, 
+    531, 539, 547, 555, 563, 571, 579, 588, 596, 604, 612, 620, 628, 636, 644, 652, 660, 668, 676, 684, 692, 
+    700, 708, 716, 724, 733, 741, 749, 757, 765, 773, 781, 789, 797, 805, 813, 821, 829, 837, 845, 853, 861, 
+    869, 878, 886, 894, 902, 910, 918, 926, 934, 942, 950, 958, 966, 974, 982, 990, 998, 1006, 1014, 1023};
+uint32_t triangle_LUT[NS] = 
+    {0, 16, 32, 48, 65, 81, 97, 113, 129, 145, 161, 177, 193, 209, 225, 241,
+    257, 273, 289, 305, 321, 337, 353, 369, 385, 401, 417, 433, 449, 465, 481, 497,
+    513, 529, 545, 561, 577, 593, 609, 625, 641, 657, 673, 689, 705, 721, 737, 753,
+    769, 785, 801, 817, 833, 849, 865, 881, 897, 913, 929, 945, 961, 977, 993, 1009,
+    1023, 1009, 993, 977, 961, 945, 929, 913, 897, 881, 865, 849, 833, 817, 801, 785,
+    769, 753, 737, 721, 705, 689, 673, 657, 641, 625, 609, 593, 577, 561, 545, 529,
+    513, 497, 481, 465, 449, 433, 417, 401, 385, 369, 353, 337, 321, 305, 289, 273,
+    257, 241, 225, 209, 193, 177, 161, 145, 129, 113, 97, 81, 65, 48, 32, 16}
 
 // TODO: Equation to calculate TIM2_Ticks
 
@@ -96,11 +112,6 @@ int main(void)
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
-  //for testing
-  init_LCD();
-  lcd_command(CLEAR);
-  lcd_putstring("EEE3095S Prac 2");
-
   /* USER CODE BEGIN Init */
   /* USER CODE END Init */
 
@@ -128,8 +139,7 @@ int main(void)
 
 
   // TODO: Write current waveform to LCD ("Sine")
-  //commented out delay but need to use this
-  //delay(3000);
+  delay(3000);
 
   // TODO: Enable DMA (start transfer from LUT to CCR)
 
