@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include "stm32f0xx.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -33,7 +34,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 // TODO: Add values for below variables
-#define NS        // Number of samples in LUT
+#define NS    // Number of samples in LUT
 #define TIM2CLK   // STM Clock frequency
 #define F_SIGNAL  // Frequency of output analog signal
 /* USER CODE END PD */
@@ -106,7 +107,8 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-
+  char clockspeed = HAL_RCC_GetSysClockFreq(); //gets the current set clock speed of the chip
+  printf(clockspeed);
   // TODO: Start TIM3 in PWM mode on channel 3
 
 
