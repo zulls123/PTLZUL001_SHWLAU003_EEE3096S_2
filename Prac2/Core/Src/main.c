@@ -23,6 +23,11 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include "stm32f0xx.h"
+
+//for testing purposes
+
+#include <lcd_stm32f0.h>
+#include "lcd_stm32f0.c"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -91,6 +96,11 @@ int main(void)
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
+  //for testing
+  init_LCD();
+  lcd_command(CLEAR);
+  lcd_putstring("EEE3095S Prac 2");
+
   /* USER CODE BEGIN Init */
   /* USER CODE END Init */
 
@@ -117,7 +127,8 @@ int main(void)
 
 
   // TODO: Write current waveform to LCD ("Sine")
-  delay(3000);
+  //commented out delay but need to use this
+  //delay(3000);
 
   // TODO: Enable DMA (start transfer from LUT to CCR)
 
