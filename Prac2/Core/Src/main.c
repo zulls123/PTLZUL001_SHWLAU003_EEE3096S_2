@@ -24,6 +24,9 @@
 #include <stdio.h>
 #include "stm32f0xx.h"
 
+#include <lcd_stm32f0.h>
+#include "lcd_stm32f0.c"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -34,9 +37,9 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 // TODO: Add values for below variables
-#define NS = 128;   // Number of samples in LUT
-#define TIM2CLK = 8e3;  // STM Clock frequency 
-#define F_SIGNAL  // Frequency of output analog signal - I think based off our circuit?
+#define NS 128   // Number of samples in LUT
+#define TIM2CLK 8e3  // STM Clock frequency in Hz
+#define F_SIGNAL   // Frequency of output analog signal in Hz
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -74,7 +77,7 @@ uint32_t triangle_LUT[NS] =
     1023, 1009, 993, 977, 961, 945, 929, 913, 897, 881, 865, 849, 833, 817, 801, 785,
     769, 753, 737, 721, 705, 689, 673, 657, 641, 625, 609, 593, 577, 561, 545, 529,
     513, 497, 481, 465, 449, 433, 417, 401, 385, 369, 353, 337, 321, 305, 289, 273,
-    257, 241, 225, 209, 193, 177, 161, 145, 129, 113, 97, 81, 65, 48, 32, 16}
+    257, 241, 225, 209, 193, 177, 161, 145, 129, 113, 97, 81, 65, 48, 32, 16};
 
 // TODO: Equation to calculate TIM2_Ticks
 
@@ -111,6 +114,12 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
+
+  //lcd
+  init_LCD();
+  lcd_command(CLEAR);
+  lcd_putstring("EEE3096S Prac 2");
+
 
   /* USER CODE BEGIN Init */
   /* USER CODE END Init */
