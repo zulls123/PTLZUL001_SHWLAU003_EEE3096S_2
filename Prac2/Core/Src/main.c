@@ -139,6 +139,7 @@ int main(void)
   char clockspeed = HAL_RCC_GetSysClockFreq(); //gets the current set clock speed of the chip
   printf(clockspeed);
   // TODO: Start TIM3 in PWM mode on channel 3
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
 
 
   // TODO: Start TIM2 in Output Compare (OC) mode on channel 1.
