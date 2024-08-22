@@ -24,9 +24,6 @@
 #include <stdio.h>
 #include "stm32f0xx.h"
 
-#include <lcd_stm32f0.h>
-#include "lcd_stm32f0.c"
-
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -38,8 +35,8 @@
 /* USER CODE BEGIN PD */
 // TODO: Add values for below variables
 #define NS 128   // Number of samples in LUT
-#define TIM2CLK 8e3  // STM Clock frequency in Hz
-#define F_SIGNAL   // Frequency of output analog signal in Hz
+#define TIM2CLK 8e3  // STM Clock frequency 
+#define F_SIGNAL 1000 // Frequency of output analog signal - I think based off our circuit?
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -56,8 +53,7 @@ DMA_HandleTypeDef hdma_tim2_ch1;
 // TODO: Add code for global variables, including LUTs
 
 uint32_t Sin_LUT[NS] = 
-    {511, 536, 562, 587, 612, 636, 661,
-     685, 708, 731, 754, 776, 797, 818, 838, 857, 875, 892, 909, 924, 938, 
+    {511, 536, 562, 587, 612, 636, 661, 685, 708, 731, 754, 776, 797, 818, 838, 857, 875, 892, 909, 924, 938, 
     952, 964, 975, 985, 994, 1002, 1008, 1014, 1018, 1021, 1022, 1022, 1022, 1019, 1016, 1011, 1005, 998, 990, 
     980, 970, 958, 945, 931, 916, 901, 884, 866, 847, 828, 808, 787, 765, 743, 720, 696, 673, 648, 624, 599, 
     574, 549, 524, 498, 473, 448, 423, 398, 374, 349, 326, 302, 279, 257, 235, 214, 194, 175, 156, 138, 121, 
@@ -82,7 +78,7 @@ uint32_t triangle_LUT[NS] =
 
 // TODO: Equation to calculate TIM2_Ticks
 
-uint32_t TIM2_Ticks = 0; // How often to write new LUT value
+uint32_t TIM2_Ticks = ((TIM2CLK*NS)/F_SIGNAL); // How often to write new LUT value
 uint32_t DestAddress = (uint32_t) &(TIM3->CCR3); // Write LUT TO TIM3->CCR3 to modify PWM duty cycle
 /* USER CODE END PV */
 
@@ -116,12 +112,6 @@ int main(void)
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
-  //lcd
-  init_LCD();
-  lcd_command(CLEAR);
-  lcd_putstring("EEE3096S Prac 2");
-
-
   /* USER CODE BEGIN Init */
   /* USER CODE END Init */
 
@@ -140,11 +130,10 @@ int main(void)
   char clockspeed = HAL_RCC_GetSysClockFreq(); //gets the current set clock speed of the chip
   printf(clockspeed);
   // TODO: Start TIM3 in PWM mode on channel 3
-  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
-
+  uint32_t OCMode;
+  uint32_t TIM_OC_InitTypeDef::OCMode;
 
   // TODO: Start TIM2 in Output Compare (OC) mode on channel 1.
-  HAL_TIM_OC_Start(&htim2, TIM_CHANNEL_1);
 
 
   // TODO: Start DMA in IT mode on TIM2->CH1; Source is LUT and Dest is TIM3->CCR3; start with Sine LUT
