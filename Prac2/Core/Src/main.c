@@ -392,34 +392,52 @@ void EXTI0_1_IRQHandler(void)
   {
     previous_time = time_elapsed;
   } else 
-  	// TODO: Disable DMA transfer and abort IT, then start DMA in IT mode with new LUT and re-enable transfer
-	// HINT: Consider using C's "switch" function to handle LUT changes  
+  	  
   { 
-  switch (current_wave)
-  {
-  case 0:
-    /* code */
-    lcd_command(CLEAR);
-    lcd_putstring("Sine");
-    break;
-  case 1:
-    lcd_command(CLEAR);
-    lcd_putstring("Sawtooth");
-    break;
-  case 2:
-    lcd_command(CLEAR);
-    lcd_putstring("Triangle");
-    break;
-  default:
-    lcd_command(CLEAR);
-    lcd_putstring("An error has occured with the wave counter");
-    break;
-  } 
 
-    if (current_wave == 2)
-     current_wave = 0;
-    else
-      current_wave++; 
+    // TODO: Disable DMA transfer and abort IT, then start DMA in IT mode with new LUT and re-enable transfer
+	// HINT: Consider using C's "switch" function to handle LUT changes
+    __HAL_TIM_DISABLE_DMA(&htim2, TIM_DMA_CC1);
+    HAL_DMA_Abort_IT(&hdma_tim2_ch1);
+
+    switch (current_wave)
+    {
+      lcd_command(CLEAR);
+      case 0:
+        /* code */
+
+        lcd_putstring("Sine");
+        // start wave
+        HAL_DMA_Start_IT(&hdma_tim2_ch1, (uint32_t)Sin_LUT, DestAddress, NS);
+        break;
+      case 1:
+        
+        lcd_putstring("Sawtooth");
+        HAL_DMA_Start_IT(&hdma_tim2_ch1, (uint32_t)saw_LUT, DestAddress, NS);
+        break;
+      case 2:
+        
+        lcd_putstring("Triangle");
+        HAL_DMA_Start_IT(&hdma_tim2_ch1, (uint32_t)triangle_LUT, DestAddress, NS);
+        break;
+      default:
+       
+        lcd_putstring("An error has occured with the wave counter");
+        break;
+    }
+
+      if (current_wave == 2)
+      current_wave = 0;
+      else
+        current_wave++; 
+
+    // Enable DMA (start transfer from LUT to CCR)
+		__HAL_TIM_ENABLE_DMA(&htim2, TIM_DMA_CC1);
+    
+    //update previous time to current time
+    previous_time = time_elapsed;
+
+  
   }
 
 
