@@ -392,19 +392,35 @@ void EXTI0_1_IRQHandler(void)
   {
     previous_time = time_elapsed;
   } else 
+  	// TODO: Disable DMA transfer and abort IT, then start DMA in IT mode with new LUT and re-enable transfer
+	// HINT: Consider using C's "switch" function to handle LUT changes  
   { 
+  switch (current_wave)
+  {
+  case 0:
+    /* code */
+    lcd_command(CLEAR);
+    lcd_putstring("Sine");
+    break;
+  case 1:
+    lcd_command(CLEAR);
+    lcd_putstring("Sawtooth");
+    break;
+  case 2:
+    lcd_command(CLEAR);
+    lcd_putstring("Triangle");
+    break;
+  default:
+    lcd_command(CLEAR);
+    lcd_putstring("An error has occured with the wave counter");
+    break;
+  } 
+
     if (current_wave == 2)
      current_wave = 0;
     else
       current_wave++; 
-
   }
-
-	// TODO: Disable DMA transfer and abort IT, then start DMA in IT mode with new LUT and re-enable transfer
-	// HINT: Consider using C's "switch" function to handle LUT changes
-
- 
-
 
 
 
