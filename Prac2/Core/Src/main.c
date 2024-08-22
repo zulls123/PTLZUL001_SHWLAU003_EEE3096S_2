@@ -403,20 +403,7 @@ void EXTI0_1_IRQHandler(void)
 	// TODO: Disable DMA transfer and abort IT, then start DMA in IT mode with new LUT and re-enable transfer
 	// HINT: Consider using C's "switch" function to handle LUT changes
 
-  switch (current_wave)
-  {
-  case current_wave == 0:
-    /* code */
-    lcd_command(CLEAR);
-    lcd_putstring("Sine");
-    break;
-  case current_wave == 1:
-    break;
-  case current_wave == 2:
-    break;
-  default:
-    break;
-  } 
+ 
 
 
 
