@@ -1,6 +1,6 @@
 {
-  "cortex-debug.armToolchainPath": "c:\\Users\\shawl\\AppData\\Roaming\\Code\\User\\globalStorage\\bmd.stm32-for-vscode\\@xpack-dev-tools\\arm-none-eabi-gcc\\12.2.1-1.2.1\\.content\\bin",
-  "cortex-debug.openocdPath": "C:\\USERS\\SHAWL\\APPDATA\\ROAMING\\CODE\\USER\\GLOBALSTORAGE\\BMD.STM32-FOR-VSCODE\\@XPACK-DEV-TOOLS\\OPENOCD\\0.12.0-1.1\\.CONTENT\\BIN\\OPENOCD.EXE",
+  "cortex-debug.armToolchainPath": "c:\\Users\\Zuleigha Patel\\AppData\\Roaming\\Code\\User\\globalStorage\\bmd.stm32-for-vscode\\@xpack-dev-tools\\arm-none-eabi-gcc\\13.2.1-1.1.1\\.content\\bin",
+  "cortex-debug.openocdPath": "C:\\USERS\\ZULEIGHA PATEL\\APPDATA\\ROAMING\\CODE\\USER\\GLOBALSTORAGE\\BMD.STM32-FOR-VSCODE\\@XPACK-DEV-TOOLS\\OPENOCD\\0.12.0-3.1\\.CONTENT\\BIN\\OPENOCD.EXE",
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
   "C_Cpp_Runner.debuggerPath": "gdb",

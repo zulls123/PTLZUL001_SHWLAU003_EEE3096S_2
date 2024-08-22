@@ -23,6 +23,8 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include "stm32f0xx.h"
+#include <lcd_stm32f0.h>
+#include "lcd_stm32f0.c"
 
 /* USER CODE END Includes */
 
@@ -35,8 +37,8 @@
 /* USER CODE BEGIN PD */
 // TODO: Add values for below variables
 #define NS 128   // Number of samples in LUT
-#define TIM2CLK 8e3  // STM Clock frequency 
-#define F_SIGNAL 1000 // Frequency of output analog signal - I think based off our circuit?
+#define TIM2CLK 8e6  // STM Clock frequency 
+#define F_SIGNAL 100 // Frequency of output analog signal - I think based off our circuit?
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -49,8 +51,11 @@ TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 DMA_HandleTypeDef hdma_tim2_ch1;
 
+
+
 /* USER CODE BEGIN PV */
 // TODO: Add code for global variables, including LUTs
+
 
 uint32_t Sin_LUT[NS] = 
     {511, 536, 562, 587, 612, 636, 661, 685, 708, 731, 754, 776, 797, 818, 838, 857, 875, 892, 909, 924, 938, 
@@ -78,7 +83,8 @@ uint32_t triangle_LUT[NS] =
 
 // TODO: Equation to calculate TIM2_Ticks
 
-uint32_t TIM2_Ticks = ((TIM2CLK*NS)/F_SIGNAL); // How often to write new LUT value
+uint32_t TIM2_Ticks = ((TIM2CLK/F_SIGNAL)/NS); // How often to write new LUT value
+
 uint32_t DestAddress = (uint32_t) &(TIM3->CCR3); // Write LUT TO TIM3->CCR3 to modify PWM duty cycle
 /* USER CODE END PV */
 
@@ -113,6 +119,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+  init_LCD();
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -130,10 +137,11 @@ int main(void)
   char clockspeed = HAL_RCC_GetSysClockFreq(); //gets the current set clock speed of the chip
   printf(clockspeed);
   // TODO: Start TIM3 in PWM mode on channel 3
-  uint32_t OCMode;
-  uint32_t TIM_OC_InitTypeDef::OCMode;
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
+
 
   // TODO: Start TIM2 in Output Compare (OC) mode on channel 1.
+  HAL_TIM_OC_Start(&htim2, TIM_CHANNEL_1);
 
 
   // TODO: Start DMA in IT mode on TIM2->CH1; Source is LUT and Dest is TIM3->CCR3; start with Sine LUT
@@ -141,7 +149,10 @@ int main(void)
   //feeds the LUT values into the PWM generator tim3 based on tim2 timing
 
   // TODO: Write current waveform to LCD ("Sine")
+  lcd_command(CLEAR);
+  lcd_putstring("Sine");
   delay(3000);
+  
 
   // TODO: Enable DMA (start transfer from LUT to CCR)
   __HAL_TIM_ENABLE_DMA(&htim2, TIM_DMA_CC1);
@@ -370,11 +381,16 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void EXTI0_1_IRQHandler(void)
 {
+  //return;
 	// TODO: Debounce using HAL_GetTick()
 
 
 	// TODO: Disable DMA transfer and abort IT, then start DMA in IT mode with new LUT and re-enable transfer
 	// HINT: Consider using C's "switch" function to handle LUT changes
+  
+
+	// Debouncing on PA0: time waiting set to 100ms
+	
 
 
 
