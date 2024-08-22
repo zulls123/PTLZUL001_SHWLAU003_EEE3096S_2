@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
   31:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   * Copyright (c) 2016 STMicroelectronics.
   32:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   * All rights reserved.
   33:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   *
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 2
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 2
 
 
   34:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   * This software is licensed under terms that can be found in the LICENSE file in
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
   88:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
   89:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** /* Private variables ---------------------------------------------------------*/
   90:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** /* Private function prototypes -----------------------------------------------*/
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 3
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 3
 
 
   91:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** /** @defgroup FLASHEx_Private_Functions FLASHEx Private Functions
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  145:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   *         must be called before.
  146:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   *         Call the @ref HAL_FLASH_Lock() to disable the flash memory access 
  147:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   *         (recommended to protect the FLASH memory against possible unwanted operation)
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 4
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 4
 
 
  148:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   * @param[in]  pEraseInit pointer to an FLASH_EraseInitTypeDef structure that
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  202:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****         {
  203:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****           FLASH_PageErase(address);
  204:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****           
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 5
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 5
 
 
  205:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****           /* Wait for last operation to be completed */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  259:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****     /*Mass erase to be done*/
  260:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****     pFlash.ProcedureOnGoing = FLASH_PROC_MASSERASE;
  261:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****         FLASH_MassErase();
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 6
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 6
 
 
  262:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  316:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   /* Get the actual read protection Option Byte value */
  317:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   rdptmp = FLASH_OB_GetRDP();
  318:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 7
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 7
 
 
  319:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   /* Wait for last operation to be completed */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  373:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****     assert_param(IS_WRPSTATE(pOBInit->WRPState));
  374:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****     if (pOBInit->WRPState == OB_WRPSTATE_ENABLE)
  375:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****     {
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 8
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 8
 
 
  376:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****       /* Enable of Write protection on the selected page */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  430:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
  431:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   return status;
  432:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** }
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 9
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 9
 
 
  433:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  487:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   */
  488:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
  489:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** /** @addtogroup FLASHEx_Private_Functions
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 10
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 10
 
 
  490:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****  * @{
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
   65              	.LFB52:
  507:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
  508:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** /**
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 11
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 11
 
 
  509:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   * @brief  Enable the write protection of the desired pages
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  563:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
  564:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   if(status == HAL_OK)
  565:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   { 
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 12
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 12
 
 
  566:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****     /* Clean the error context */
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  620:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   
  621:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   return status;
  622:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** }
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 13
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 13
 
 
  623:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  677:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****     
  678:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   /* Wait for last operation to be completed */
  679:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   status = FLASH_WaitForLastOperation((uint32_t)FLASH_TIMEOUT_VALUE);
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 14
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 14
 
 
  680:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  734:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****     }
  735:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   }
  736:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   return status;
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 15
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 15
 
 
  737:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** }
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  791:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
  792:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** /**
  793:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   * @brief  Program the FLASH User Option Byte.    
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 16
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 16
 
 
  794:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   * @note   Programming of the OB should be performed only after an erase (otherwise PGERR occurs)
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  848:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   *         (system reset will occur)
  849:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   *         Programming of the OB should be performed only after an erase (otherwise PGERR occurs)
  850:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   * @param  Address specifies the address to be programmed.
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 17
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 17
 
 
  851:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   *         This parameter can be 0x1FFFF804 or 0x1FFFF806. 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
   78              	.L6:
   79 0006 C046     		.align	2
   80              	.L5:
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 18
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 18
 
 
   81 0008 00200240 		.word	1073881088
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  915:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****     return OB_RDP_LEVEL_2;
  115              		.loc 1 915 12 view .LVU19
  116 000e CC20     		movs	r0, #204
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 19
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 19
 
 
  117 0010 00E0     		b	.L7
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  154 0002 DB69     		ldr	r3, [r3, #28]
  155              		.loc 1 932 60 view .LVU26
  156 0004 1B0A     		lsrs	r3, r3, #8
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 20
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 20
 
 
  157              		.loc 1 932 10 discriminator 1 view .LVU27
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  203 000a 0028     		cmp	r0, #0
  204 000c 00D0     		beq	.L18
  205              	.LVL8:
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 21
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 21
 
 
  206              	.L17:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  246 0038 2B69     		ldr	r3, [r5, #16]
  247 003a 103E     		subs	r6, r6, #16
  248 003c 3343     		orrs	r3, r6
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 22
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 22
 
 
  249 003e 2B61     		str	r3, [r5, #16]
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  297              	.LVL15:
  805:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   assert_param(IS_OB_STOP_SOURCE((UserConfig&OB_STOP_NO_RST)));
  298              		.loc 1 805 3 view .LVU60
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 23
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 23
 
 
  806:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   assert_param(IS_OB_STDBY_SOURCE((UserConfig&OB_STDBY_NO_RST)));
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  830:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** #endif
  336              		.loc 1 830 14 is_stmt 0 view .LVU78
  337 0020 7823     		movs	r3, #120
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 24
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 24
 
 
  338 0022 5B42     		rsbs	r3, r3, #0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  388 0004 0D00     		movs	r5, r1
  857:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   
  389              		.loc 1 857 3 is_stmt 1 view .LVU85
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 25
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 25
 
 
  390              	.LVL23:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  875:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****     
  429              		.loc 1 875 14 is_stmt 0 view .LVU101
  430 0024 0348     		ldr	r0, .L29
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 26
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 26
 
 
  431              	.LVL30:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  478              		.loc 1 320 3 is_stmt 1 view .LVU110
  320:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
  479              		.loc 1 320 12 is_stmt 0 view .LVU111
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 27
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 27
 
 
  480 0008 0E48     		ldr	r0, .L34
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  521 0032 2369     		ldr	r3, [r4, #16]
  522 0034 B343     		bics	r3, r6
  523 0036 2361     		str	r3, [r4, #16]
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 28
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 28
 
 
  337:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****     {
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  524:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** #endif /* OB_WRP1_WRP1 */
  570              		.loc 1 524 3 view .LVU135
  534:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****     
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 29
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 29
 
 
  571              		.loc 1 534 3 view .LVU136
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  610              	.LVL54:
  611              	.L40:
  567:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 30
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 30
 
 
  612              		.loc 1 567 5 is_stmt 1 view .LVU152
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  579:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****         
  654              		.loc 1 579 9 view .LVU165
  579:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****         
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 31
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 31
 
 
  655              		.loc 1 579 11 is_stmt 0 view .LVU166
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  698              		.align	1
  699              		.syntax unified
  700              		.code	16
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 32
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 32
 
 
  701              		.thumb_func
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  742              	.LVL68:
  679:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
  743              		.loc 1 679 3 is_stmt 1 view .LVU193
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 33
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 33
 
 
  679:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  783              		.loc 1 693 9 is_stmt 0 view .LVU208
  784 0038 FF2D     		cmp	r5, #255
  785 003a 09D1     		bne	.L50
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 34
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 34
 
 
  786              	.LVL75:
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  826              		.loc 1 705 18 view .LVU222
  827 0064 2340     		ands	r3, r4
  828 0066 5381     		strh	r3, [r2, #10]
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 35
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 35
 
 
  708:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****       }
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  365:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
  876              		.loc 1 365 3 discriminator 2 view .LVU232
  877 000c 204B     		ldr	r3, .L71
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 36
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 36
 
 
  878 000e 0122     		movs	r2, #1
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  388:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****     }
  914              		.loc 1 388 14 is_stmt 0 view .LVU251
  915 002e 10E0     		b	.L55
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 37
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 37
 
 
  916              	.LVL85:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  956              	.L61:
  429:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
  957              		.loc 1 429 3 is_stmt 1 view .LVU266
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 38
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 38
 
 
  429:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  995              		.loc 1 407 14 is_stmt 0 view .LVU283
  996 0066 607B     		ldrb	r0, [r4, #13]
  997              	.LVL98:
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 39
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 39
 
 
  407:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****     if (status != HAL_OK)
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  1034              		.loc 1 424 14 is_stmt 0 view .LVU301
  1035 008a E2E7     		b	.L55
  1036              	.LVL102:
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 40
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 40
 
 
  1037              	.L62:
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  1082 000e FFF7FEFF 		bl	FLASH_OB_GetRDP
  1083              	.LVL106:
  449:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 41
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 41
 
 
  1084              		.loc 1 449 21 discriminator 1 view .LVU313
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  1128              	.LVL111:
  478:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** }
  1129              		.loc 1 478 3 is_stmt 1 view .LVU326
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 42
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 42
 
 
  1130              	.L74:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  945:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   */
  946:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
  947:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** /** @addtogroup FLASH_Private_Functions
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 43
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 43
 
 
  948:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****  * @{
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  1203              		.align	1
  1204              		.global	HAL_FLASHEx_Erase
  1205              		.syntax unified
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 44
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 44
 
 
  1206              		.code	16
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  1247              		.loc 1 189 5 view .LVU354
  193:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****       {
  1248              		.loc 1 193 7 view .LVU355
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 45
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 45
 
 
  193:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****       {
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  1287 003c FFF7FEFF 		bl	FLASH_PageErase
  1288              	.LVL123:
  206:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****           
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 46
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 46
 
 
  1289              		.loc 1 206 11 is_stmt 1 view .LVU372
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  178:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****         
  1331              		.loc 1 178 9 view .LVU385
  178:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****         
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 47
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 47
 
 
  1332              		.loc 1 178 18 is_stmt 0 view .LVU386
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  1374 0090 0220     		movs	r0, #2
  1375              	.LVL138:
  163:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c **** 
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 48
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 48
 
 
  1376              		.loc 1 163 3 discriminator 1 view .LVU399
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  246:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c ****   {
  1423              		.loc 1 246 6 view .LVU409
  1424 0014 002B     		cmp	r3, #0
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 49
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 49
 
 
  1425 0016 1BD1     		bne	.L102
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  1462              		.loc 1 280 1 is_stmt 0 view .LVU426
  1463 003c 2000     		movs	r0, r4
  1464              		@ sp needed
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 50
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 50
 
 
  1465 003e 10BD     		pop	{r4, pc}
@@ -2984,58 +2984,58 @@ ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 1
  1500              		.file 5 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h"
  1501              		.file 6 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h"
  1502              		.file 7 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h"
-ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s 			page 51
+ARM GAS  C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s 			page 51
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f0xx_hal_flash_ex.c
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:19     .text.FLASH_MassErase:00000000 $t
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:24     .text.FLASH_MassErase:00000000 FLASH_MassErase
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:53     .text.FLASH_MassErase:0000001c $d
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:59     .text.FLASH_OB_GetWRP:00000000 $t
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:64     .text.FLASH_OB_GetWRP:00000000 FLASH_OB_GetWRP
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:81     .text.FLASH_OB_GetWRP:00000008 $d
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:86     .text.FLASH_OB_GetRDP:00000000 $t
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:91     .text.FLASH_OB_GetRDP:00000000 FLASH_OB_GetRDP
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:134    .text.FLASH_OB_GetRDP:0000001c $d
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:139    .text.FLASH_OB_GetUser:00000000 $t
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:144    .text.FLASH_OB_GetUser:00000000 FLASH_OB_GetUser
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:166    .text.FLASH_OB_GetUser:0000000c $d
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:171    .text.FLASH_OB_RDP_LevelConfig:00000000 $t
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:176    .text.FLASH_OB_RDP_LevelConfig:00000000 FLASH_OB_RDP_LevelConfig
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:268    .text.FLASH_OB_RDP_LevelConfig:00000054 $d
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:276    .text.FLASH_OB_UserConfig:00000000 $t
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:281    .text.FLASH_OB_UserConfig:00000000 FLASH_OB_UserConfig
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:358    .text.FLASH_OB_UserConfig:0000003c $d
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:366    .text.FLASH_OB_ProgramData:00000000 $t
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:371    .text.FLASH_OB_ProgramData:00000000 FLASH_OB_ProgramData
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:443    .text.FLASH_OB_ProgramData:00000034 $d
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:450    .text.HAL_FLASHEx_OBErase:00000000 $t
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:456    .text.HAL_FLASHEx_OBErase:00000000 HAL_FLASHEx_OBErase
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:540    .text.HAL_FLASHEx_OBErase:00000044 $d
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:547    .text.FLASH_OB_EnableWRP:00000000 $t
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:552    .text.FLASH_OB_EnableWRP:00000000 FLASH_OB_EnableWRP
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:690    .text.FLASH_OB_EnableWRP:00000070 $d
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:698    .text.FLASH_OB_DisableWRP:00000000 $t
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:703    .text.FLASH_OB_DisableWRP:00000000 FLASH_OB_DisableWRP
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:841    .text.FLASH_OB_DisableWRP:00000070 $d
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:849    .text.HAL_FLASHEx_OBProgram:00000000 $t
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:855    .text.HAL_FLASHEx_OBProgram:00000000 HAL_FLASHEx_OBProgram
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:1046   .text.HAL_FLASHEx_OBProgram:00000090 $d
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:1051   .text.HAL_FLASHEx_OBGetConfig:00000000 $t
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:1057   .text.HAL_FLASHEx_OBGetConfig:00000000 HAL_FLASHEx_OBGetConfig
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:1101   .text.HAL_FLASHEx_OBGetUserData:00000000 $t
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:1107   .text.HAL_FLASHEx_OBGetUserData:00000000 HAL_FLASHEx_OBGetUserData
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:1153   .text.HAL_FLASHEx_OBGetUserData:0000001c $d
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:1159   .text.FLASH_PageErase:00000000 $t
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:1165   .text.FLASH_PageErase:00000000 FLASH_PageErase
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:1197   .text.FLASH_PageErase:0000001c $d
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:1203   .text.HAL_FLASHEx_Erase:00000000 $t
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:1209   .text.HAL_FLASHEx_Erase:00000000 HAL_FLASHEx_Erase
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:1381   .text.HAL_FLASHEx_Erase:00000094 $d
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:1388   .text.HAL_FLASHEx_Erase_IT:00000000 $t
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:1394   .text.HAL_FLASHEx_Erase_IT:00000000 HAL_FLASHEx_Erase_IT
-C:\Users\ZULEIG~1\AppData\Local\Temp\ccvM3N2d.s:1490   .text.HAL_FLASHEx_Erase_IT:00000054 $d
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:19     .text.FLASH_MassErase:00000000 $t
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:24     .text.FLASH_MassErase:00000000 FLASH_MassErase
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:53     .text.FLASH_MassErase:0000001c $d
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:59     .text.FLASH_OB_GetWRP:00000000 $t
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:64     .text.FLASH_OB_GetWRP:00000000 FLASH_OB_GetWRP
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:81     .text.FLASH_OB_GetWRP:00000008 $d
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:86     .text.FLASH_OB_GetRDP:00000000 $t
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:91     .text.FLASH_OB_GetRDP:00000000 FLASH_OB_GetRDP
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:134    .text.FLASH_OB_GetRDP:0000001c $d
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:139    .text.FLASH_OB_GetUser:00000000 $t
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:144    .text.FLASH_OB_GetUser:00000000 FLASH_OB_GetUser
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:166    .text.FLASH_OB_GetUser:0000000c $d
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:171    .text.FLASH_OB_RDP_LevelConfig:00000000 $t
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:176    .text.FLASH_OB_RDP_LevelConfig:00000000 FLASH_OB_RDP_LevelConfig
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:268    .text.FLASH_OB_RDP_LevelConfig:00000054 $d
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:276    .text.FLASH_OB_UserConfig:00000000 $t
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:281    .text.FLASH_OB_UserConfig:00000000 FLASH_OB_UserConfig
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:358    .text.FLASH_OB_UserConfig:0000003c $d
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:366    .text.FLASH_OB_ProgramData:00000000 $t
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:371    .text.FLASH_OB_ProgramData:00000000 FLASH_OB_ProgramData
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:443    .text.FLASH_OB_ProgramData:00000034 $d
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:450    .text.HAL_FLASHEx_OBErase:00000000 $t
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:456    .text.HAL_FLASHEx_OBErase:00000000 HAL_FLASHEx_OBErase
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:540    .text.HAL_FLASHEx_OBErase:00000044 $d
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:547    .text.FLASH_OB_EnableWRP:00000000 $t
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:552    .text.FLASH_OB_EnableWRP:00000000 FLASH_OB_EnableWRP
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:690    .text.FLASH_OB_EnableWRP:00000070 $d
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:698    .text.FLASH_OB_DisableWRP:00000000 $t
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:703    .text.FLASH_OB_DisableWRP:00000000 FLASH_OB_DisableWRP
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:841    .text.FLASH_OB_DisableWRP:00000070 $d
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:849    .text.HAL_FLASHEx_OBProgram:00000000 $t
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:855    .text.HAL_FLASHEx_OBProgram:00000000 HAL_FLASHEx_OBProgram
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:1046   .text.HAL_FLASHEx_OBProgram:00000090 $d
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:1051   .text.HAL_FLASHEx_OBGetConfig:00000000 $t
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:1057   .text.HAL_FLASHEx_OBGetConfig:00000000 HAL_FLASHEx_OBGetConfig
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:1101   .text.HAL_FLASHEx_OBGetUserData:00000000 $t
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:1107   .text.HAL_FLASHEx_OBGetUserData:00000000 HAL_FLASHEx_OBGetUserData
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:1153   .text.HAL_FLASHEx_OBGetUserData:0000001c $d
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:1159   .text.FLASH_PageErase:00000000 $t
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:1165   .text.FLASH_PageErase:00000000 FLASH_PageErase
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:1197   .text.FLASH_PageErase:0000001c $d
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:1203   .text.HAL_FLASHEx_Erase:00000000 $t
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:1209   .text.HAL_FLASHEx_Erase:00000000 HAL_FLASHEx_Erase
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:1381   .text.HAL_FLASHEx_Erase:00000094 $d
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:1388   .text.HAL_FLASHEx_Erase_IT:00000000 $t
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:1394   .text.HAL_FLASHEx_Erase_IT:00000000 HAL_FLASHEx_Erase_IT
+C:\Users\ZULEIG~1\AppData\Local\Temp\cciWvOMw.s:1490   .text.HAL_FLASHEx_Erase_IT:00000054 $d
 
 UNDEFINED SYMBOLS
 pFlash
