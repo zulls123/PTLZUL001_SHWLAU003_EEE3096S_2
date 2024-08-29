@@ -126,9 +126,9 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-  init_LCD();
-  lcd_command(CLEAR);
-  lcd_putstring("EEE3095S Prac 3");
+  //init_LCD();
+  // lcd_command(CLEAR);
+  // lcd_putstring("EEE3095S Prac 3");
 
   /* USER CODE BEGIN Init */
   /* USER CODE END Init */
@@ -149,7 +149,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   // Initialise LCD
-  // init_LCD();
+  init_LCD();
 
   // Start timers
   HAL_TIM_Base_Start_IT(&htim6);
@@ -476,10 +476,22 @@ static void MX_GPIO_Init(void)
 void EXTI0_1_IRQHandler(void)
 {
 	// TODO: Add code to switch LED7 delay frequency
+  current_time = HAL_GetTick();
 
-	
-  
-
+  if((current_time - previous_time) > 500) //check that button press is not too fast
+  {
+    if(delay_time == 500) //if the frequency is 2Hz, change to 1Hz
+    
+      delay_time = 1000;
+    
+    else
+    
+      delay_time = 500; //if the frequency is 1Hz, change to 2Hz
+    
+    previous_time = current_time; //update the previous time
+  }
+   
+  // Acknowledge interrupt
 	HAL_GPIO_EXTI_IRQHandler(Button0_Pin); // Clear interrupt flags
 }
 
@@ -501,31 +513,31 @@ void TIM16_IRQHandler(void)
 
   //read from EEPROM
   EEPROM_read_value = read_from_address(EEPROM_counter);
+  uint8_t decimalValue = (uint8_t)EEPROM_read_value;
 
 	// TODO: Change LED pattern; output 0x01 if the read SPI data is incorrect
 
   //check if the read value is correct
-  // if (EEPROM_read_value != EEPROM_data[EEPROM_counter]) {
-  //   snprintf(EEPROM_read_string_line1, sizeof(EEPROM_read_string_line1), "EEPROM byte:");
-  //   snprintf(EEPROM_read_string_line2, sizeof(EEPROM_read_string_line2), "SPI ERROR!");
-  // }
-  // else{
-  //   snprintf(EEPROM_read_string_line1, sizeof(EEPROM_read_string_line1), "EEPROM byte:\n%d", EEPROM_read_value);
+  if (EEPROM_read_value != EEPROM_data[EEPROM_counter]) {
+    snprintf(EEPROM_read_string_line1, sizeof(EEPROM_read_string_line1), "EEPROM byte:");
+    snprintf(EEPROM_read_string_line2, sizeof(EEPROM_read_string_line2), "SPI ERROR!");
+  }
+  else{
+    snprintf(EEPROM_read_string_line1, sizeof(EEPROM_read_string_line1), "EEPROM byte:");
    
-  //   //display second line with ADC value
-  //   snprintf(EEPROM_read_string_line2, sizeof(EEPROM_read_string_line2), "ADC value: %ld", adc_val);
+    //display second line with ADC value
+    snprintf(EEPROM_read_string_line2, sizeof(EEPROM_read_string_line2), decimalValue);
     
-  // }
+  }
 
-    // snprintf(EEPROM_read_string_line1, sizeof(EEPROM_read_string_line1),"EEPROM byte:", EEPROM_read_value);
-   
-    // //display second line with ADC value
-    // snprintf(EEPROM_read_string_line2, sizeof(EEPROM_read_string_line2), "ADC value: %ld", adc_val);
+    
     
 
   //write string to LCD
-  writeLCD("EEPROM byte:");
-
+  lcd_command(CLEAR);
+  writeLCD(EEPROM_read_string_line1);
+  lcd_command(LINE_TWO);
+  writeLCD(EEPROM_read_string_line2);
   
 
   //update counter and reset if it reaches the end of the array
@@ -539,7 +551,7 @@ void TIM16_IRQHandler(void)
 void writeLCD(char *char_in){
   delay(3000);
 
-  lcd_command(CLEAR);
+  //lcd_command(CLEAR);
   lcd_putstring(char_in);
 
   
