@@ -64,6 +64,8 @@ TIM_HandleTypeDef htim16;
 
 // TODO: Define input variables
 uint8_t EEPROM_data [6] = {0b10101010, 01010101, 11001100, 00110011, 11110000, 00001111};
+//ARR value for ADCtoCCR
+uint32_t ARR = 47999;
 
 
 /* USER CODE END PV */
