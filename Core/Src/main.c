@@ -66,6 +66,13 @@ TIM_HandleTypeDef htim16;
 uint8_t EEPROM_data [6] = {0b10101010, 01010101, 11001100, 00110011, 11110000, 00001111};
 //ARR value for ADCtoCCR
 uint32_t ARR = 47999;
+//ADC value for pollADC anf ADCtoCCR
+uint32_t adc_val;
+
+//for calculating delay and detecting 1Hz (1000 ms) and 2Hz (500 ms) frequency
+uint32_t previous_time = 0;
+uint32_t current_time = 0; 
+
 
 
 /* USER CODE END PV */
@@ -146,6 +153,10 @@ int main(void)
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3); // Start PWM on TIM3 Channel 3
 
   // TODO: Write all bytes to EEPROM using "write_to_address"
+  for (uint16_t i = 0; i < 6; i++) {
+    write_to_address(i, EEPROM_data[i]);
+  }
+
   
   
   /* USER CODE END 2 */
@@ -156,6 +167,7 @@ int main(void)
   {
 
 	// TODO: Poll ADC
+
 
 
 	// TODO: Get CRR
