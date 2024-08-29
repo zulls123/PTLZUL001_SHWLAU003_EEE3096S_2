@@ -73,6 +73,11 @@ uint32_t adc_val;
 uint32_t previous_time = 0;
 uint32_t current_time = 0; 
 
+//for reading from EEPROM
+static int EEPROM_counter = 0;
+uint8_t EEPROM_read_value;
+char EEPROM_read_string[16];
+
 
 
 /* USER CODE END PV */
@@ -491,8 +496,27 @@ void TIM16_IRQHandler(void)
 
 	// TODO: Initialise a string to output second line on LCD
 
+  //read from EEPROM
+  EEPROM_read_value = read_from_address(EEPROM_counter);
+
+
+
 
 	// TODO: Change LED pattern; output 0x01 if the read SPI data is incorrect
+
+  //check if the read value is correct
+  if (EEPROM_read_value != EEPROM_data[EEPROM_counter]) {
+    snprintf(EEPROM_read_string, sizeof(EEPROM_read_string), "EEPROM byte:\nSPI ERROR!");
+  }
+  else{
+    snprintf(EEPROM_read_string, sizeof(EEPROM_read_string), "EEPROM byte:\n%d", EEPROM_read_value);
+  }
+
+  //write string to LCD
+  writeLCD(EEPROM_read_string);
+
+  //update counter and reset if it reaches the end of the array
+  EEPROM_counter = (EEPROM_counter + 1) % 6;
 	
   
 
