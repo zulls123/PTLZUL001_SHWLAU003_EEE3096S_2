@@ -76,7 +76,8 @@ uint32_t current_time = 0;
 //for reading from EEPROM
 static int EEPROM_counter = 0;
 uint8_t EEPROM_read_value;
-char EEPROM_read_string[16];
+char EEPROM_read_string_line1[16]; //buffer for line 1
+char EEPROM_read_string_line2[16]; //buffer for line 2
 
 
 
@@ -525,6 +526,9 @@ void TIM16_IRQHandler(void)
 // TODO: Complete the writeLCD function
 void writeLCD(char *char_in){
   delay(3000);
+
+  lcd_command(CLEAR);
+  lcd_putstring(char_in);
   
 	
   
@@ -542,13 +546,13 @@ uint32_t pollADC(void){
 // Calculate PWM CCR value
 uint32_t ADCtoCCR(uint32_t adc_val){
   // TODO: Calculate CCR value (val) using an appropriate equation
-
-	//return val;
+  uint32_t val = (adc_val * ARR) / 4095;
+	return val;
 }
 
 void ADC1_COMP_IRQHandler(void)
 {
-	//adc_val = HAL_ADC_GetValue(&hadc); // read adc value
+	adc_val = HAL_ADC_GetValue(&hadc); // read adc value
 	HAL_ADC_IRQHandler(&hadc); //Clear flags
 }
 
