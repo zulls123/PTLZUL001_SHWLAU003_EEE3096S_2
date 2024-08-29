@@ -71,7 +71,8 @@ uint32_t adc_val;
 
 //for calculating delay and detecting 1Hz (1000 ms) and 2Hz (500 ms) frequency
 uint32_t previous_time = 0;
-uint32_t current_time = 0; 
+uint32_t current_time = 0;
+uint32_t delay_time = 500; //initial delay time is 500 ms
 
 //for reading from EEPROM
 static int EEPROM_counter = 0;
@@ -475,6 +476,7 @@ static void MX_GPIO_Init(void)
 void EXTI0_1_IRQHandler(void)
 {
 	// TODO: Add code to switch LED7 delay frequency
+
 	
   
 
@@ -500,21 +502,31 @@ void TIM16_IRQHandler(void)
   //read from EEPROM
   EEPROM_read_value = read_from_address(EEPROM_counter);
 
-
-
-
 	// TODO: Change LED pattern; output 0x01 if the read SPI data is incorrect
 
   //check if the read value is correct
-  if (EEPROM_read_value != EEPROM_data[EEPROM_counter]) {
-    snprintf(EEPROM_read_string, sizeof(EEPROM_read_string), "EEPROM byte:\nSPI ERROR!");
-  }
-  else{
-    snprintf(EEPROM_read_string, sizeof(EEPROM_read_string), "EEPROM byte:\n%d", EEPROM_read_value);
-  }
+  // if (EEPROM_read_value != EEPROM_data[EEPROM_counter]) {
+  //   snprintf(EEPROM_read_string_line1, sizeof(EEPROM_read_string_line1), "EEPROM byte:");
+  //   snprintf(EEPROM_read_string_line2, sizeof(EEPROM_read_string_line2), "SPI ERROR!");
+  // }
+  // else{
+  //   snprintf(EEPROM_read_string_line1, sizeof(EEPROM_read_string_line1), "EEPROM byte:\n%d", EEPROM_read_value);
+   
+  //   //display second line with ADC value
+  //   snprintf(EEPROM_read_string_line2, sizeof(EEPROM_read_string_line2), "ADC value: %ld", adc_val);
+    
+  // }
+
+    // snprintf(EEPROM_read_string_line1, sizeof(EEPROM_read_string_line1),"EEPROM byte:", EEPROM_read_value);
+   
+    // //display second line with ADC value
+    // snprintf(EEPROM_read_string_line2, sizeof(EEPROM_read_string_line2), "ADC value: %ld", adc_val);
+    
 
   //write string to LCD
-  writeLCD(EEPROM_read_string);
+  writeLCD("EEPROM byte:");
+
+  
 
   //update counter and reset if it reaches the end of the array
   EEPROM_counter = (EEPROM_counter + 1) % 6;
@@ -529,6 +541,7 @@ void writeLCD(char *char_in){
 
   lcd_command(CLEAR);
   lcd_putstring(char_in);
+
   
 	
   
