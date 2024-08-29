@@ -494,12 +494,12 @@ uint32_t pollADC(void){
 uint32_t ADCtoCCR(uint32_t adc_val){
   // TODO: Calculate CCR value (val) using an appropriate equation
 
-	return val;
+	//return val;
 }
 
 void ADC1_COMP_IRQHandler(void)
 {
-	adc_val = HAL_ADC_GetValue(&hadc); // read adc value
+	//adc_val = HAL_ADC_GetValue(&hadc); // read adc value
 	HAL_ADC_IRQHandler(&hadc); //Clear flags
 }
 
