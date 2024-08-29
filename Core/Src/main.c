@@ -167,10 +167,12 @@ int main(void)
   {
 
 	// TODO: Poll ADC
+  adc_val = pollADC(); //reads the analog value from the potentiometer
 
 
 
 	// TODO: Get CRR
+  CCR = ADCtoCCR(adc_val); //converts the analog value to a CCR value for the PWM signal
   
 
   // Update PWM value
