@@ -2121,25 +2121,25 @@ LOAD c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-f
  .comment       0x00000039       0x3a c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(libc_a-msizer.o)
  .comment       0x00000039       0x3a c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libnosys.a(sbrk.o)
 
-.debug_info     0x00000000     0xc47b
- .debug_info    0x00000000     0x22dc build/main.o
- .debug_info    0x000022dc      0xcae build/stm32f0xx_hal_msp.o
- .debug_info    0x00002f8a      0x121 build/stm32f0xx_it.o
- .debug_info    0x000030ab      0x25d build/system_stm32f0xx.o
- .debug_info    0x00003308      0x74c build/stm32f0xx_hal.o
- .debug_info    0x00003a54      0xf56 build/stm32f0xx_hal_adc.o
- .debug_info    0x000049aa      0x7f3 build/stm32f0xx_hal_cortex.o
- .debug_info    0x0000519d      0x5ec build/stm32f0xx_hal_gpio.o
- .debug_info    0x00005789     0x3b7c build/stm32f0xx_hal_tim.o
- .debug_info    0x00009305     0x1a01 build/stm32f0xx_hal_tim_ex.o
- .debug_info    0x0000ad06      0x4cd build/stm32f0xx_ll_exti.o
- .debug_info    0x0000b1d3      0x773 build/stm32f0xx_ll_gpio.o
- .debug_info    0x0000b946      0xa1c build/stm32f0xx_ll_utils.o
- .debug_info    0x0000c362       0x30 build/startup_stm32f051x8.o
- .debug_info    0x0000c392       0x31 c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_thumb1_case_shi.o)
- .debug_info    0x0000c3c3       0x3e c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
- .debug_info    0x0000c401       0x3e c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_divsi3.o)
- .debug_info    0x0000c43f       0x3c c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
+.debug_info     0x00000000     0xc466
+ .debug_info    0x00000000     0x22c7 build/main.o
+ .debug_info    0x000022c7      0xcae build/stm32f0xx_hal_msp.o
+ .debug_info    0x00002f75      0x121 build/stm32f0xx_it.o
+ .debug_info    0x00003096      0x25d build/system_stm32f0xx.o
+ .debug_info    0x000032f3      0x74c build/stm32f0xx_hal.o
+ .debug_info    0x00003a3f      0xf56 build/stm32f0xx_hal_adc.o
+ .debug_info    0x00004995      0x7f3 build/stm32f0xx_hal_cortex.o
+ .debug_info    0x00005188      0x5ec build/stm32f0xx_hal_gpio.o
+ .debug_info    0x00005774     0x3b7c build/stm32f0xx_hal_tim.o
+ .debug_info    0x000092f0     0x1a01 build/stm32f0xx_hal_tim_ex.o
+ .debug_info    0x0000acf1      0x4cd build/stm32f0xx_ll_exti.o
+ .debug_info    0x0000b1be      0x773 build/stm32f0xx_ll_gpio.o
+ .debug_info    0x0000b931      0xa1c build/stm32f0xx_ll_utils.o
+ .debug_info    0x0000c34d       0x30 build/startup_stm32f051x8.o
+ .debug_info    0x0000c37d       0x31 c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_thumb1_case_shi.o)
+ .debug_info    0x0000c3ae       0x3e c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
+ .debug_info    0x0000c3ec       0x3e c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_divsi3.o)
+ .debug_info    0x0000c42a       0x3c c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
 
 .debug_abbrev   0x00000000     0x1ee8
  .debug_abbrev  0x00000000      0x4e8 build/main.o
@@ -2162,31 +2162,31 @@ LOAD c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-f
  .debug_abbrev  0x00001ec2       0x26 c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
 
 .debug_loclists
-                0x00000000     0x72af
+                0x00000000     0x72a4
  .debug_loclists
-                0x00000000      0x2f7 build/main.o
+                0x00000000      0x2ec build/main.o
  .debug_loclists
-                0x000002f7       0x96 build/stm32f0xx_hal_msp.o
+                0x000002ec       0x96 build/stm32f0xx_hal_msp.o
  .debug_loclists
-                0x0000038d       0xf5 build/system_stm32f0xx.o
+                0x00000382       0xf5 build/system_stm32f0xx.o
  .debug_loclists
-                0x00000482       0xe1 build/stm32f0xx_hal.o
+                0x00000477       0xe1 build/stm32f0xx_hal.o
  .debug_loclists
-                0x00000563      0x9c7 build/stm32f0xx_hal_adc.o
+                0x00000558      0x9c7 build/stm32f0xx_hal_adc.o
  .debug_loclists
-                0x00000f2a      0x208 build/stm32f0xx_hal_cortex.o
+                0x00000f1f      0x208 build/stm32f0xx_hal_cortex.o
  .debug_loclists
-                0x00001132      0x28d build/stm32f0xx_hal_gpio.o
+                0x00001127      0x28d build/stm32f0xx_hal_gpio.o
  .debug_loclists
-                0x000013bf     0x3de4 build/stm32f0xx_hal_tim.o
+                0x000013b4     0x3de4 build/stm32f0xx_hal_tim.o
  .debug_loclists
-                0x000051a3     0x187a build/stm32f0xx_hal_tim_ex.o
+                0x00005198     0x187a build/stm32f0xx_hal_tim_ex.o
  .debug_loclists
-                0x00006a1d      0x1d3 build/stm32f0xx_ll_exti.o
+                0x00006a12      0x1d3 build/stm32f0xx_ll_exti.o
  .debug_loclists
-                0x00006bf0      0x281 build/stm32f0xx_ll_gpio.o
+                0x00006be5      0x281 build/stm32f0xx_ll_gpio.o
  .debug_loclists
-                0x00006e71      0x43e build/stm32f0xx_ll_utils.o
+                0x00006e66      0x43e build/stm32f0xx_ll_utils.o
 
 .debug_aranges  0x00000000      0xae8
  .debug_aranges
@@ -2277,26 +2277,26 @@ LOAD c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-f
  .debug_line    0x0000b70e       0x5d c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_divsi3.o)
  .debug_line    0x0000b76b       0x4a c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
 
-.debug_str      0x00000000     0x3502
- .debug_str     0x00000000     0x3502 build/main.o
-                               0x138b (size before relaxing)
- .debug_str     0x00003502      0x981 build/stm32f0xx_hal_msp.o
- .debug_str     0x00003502      0x1f1 build/stm32f0xx_it.o
- .debug_str     0x00003502      0x262 build/system_stm32f0xx.o
- .debug_str     0x00003502      0x6d6 build/stm32f0xx_hal.o
- .debug_str     0x00003502      0x8ef build/stm32f0xx_hal_adc.o
- .debug_str     0x00003502      0x617 build/stm32f0xx_hal_cortex.o
- .debug_str     0x00003502      0x3f1 build/stm32f0xx_hal_gpio.o
- .debug_str     0x00003502     0x1666 build/stm32f0xx_hal_tim.o
- .debug_str     0x00003502      0xe82 build/stm32f0xx_hal_tim_ex.o
- .debug_str     0x00003502      0x366 build/stm32f0xx_ll_exti.o
- .debug_str     0x00003502      0x392 build/stm32f0xx_ll_gpio.o
- .debug_str     0x00003502      0x5f8 build/stm32f0xx_ll_utils.o
- .debug_str     0x00003502       0x77 build/startup_stm32f051x8.o
- .debug_str     0x00003502      0x136 c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_thumb1_case_shi.o)
- .debug_str     0x00003502      0x13b c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
- .debug_str     0x00003502      0x139 c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_divsi3.o)
- .debug_str     0x00003502      0x13c c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
+.debug_str      0x00000000     0x34f4
+ .debug_str     0x00000000     0x34f4 build/main.o
+                               0x137d (size before relaxing)
+ .debug_str     0x000034f4      0x981 build/stm32f0xx_hal_msp.o
+ .debug_str     0x000034f4      0x1f1 build/stm32f0xx_it.o
+ .debug_str     0x000034f4      0x262 build/system_stm32f0xx.o
+ .debug_str     0x000034f4      0x6d6 build/stm32f0xx_hal.o
+ .debug_str     0x000034f4      0x8ef build/stm32f0xx_hal_adc.o
+ .debug_str     0x000034f4      0x617 build/stm32f0xx_hal_cortex.o
+ .debug_str     0x000034f4      0x3f1 build/stm32f0xx_hal_gpio.o
+ .debug_str     0x000034f4     0x1666 build/stm32f0xx_hal_tim.o
+ .debug_str     0x000034f4      0xe82 build/stm32f0xx_hal_tim_ex.o
+ .debug_str     0x000034f4      0x366 build/stm32f0xx_ll_exti.o
+ .debug_str     0x000034f4      0x392 build/stm32f0xx_ll_gpio.o
+ .debug_str     0x000034f4      0x5f8 build/stm32f0xx_ll_utils.o
+ .debug_str     0x000034f4       0x77 build/startup_stm32f051x8.o
+ .debug_str     0x000034f4      0x136 c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_thumb1_case_shi.o)
+ .debug_str     0x000034f4      0x13b c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
+ .debug_str     0x000034f4      0x139 c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_divsi3.o)
+ .debug_str     0x000034f4      0x13c c:/Users/Zuleigha Patel/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/13.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
 
 .debug_frame    0x00000000     0x1abc
  .debug_frame   0x00000000      0x25c build/main.o

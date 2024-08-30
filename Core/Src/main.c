@@ -77,8 +77,6 @@ uint32_t delay_time = 500; //initial delay time is 500 ms
 //for reading from EEPROM
 static int EEPROM_counter = 0;
 uint8_t EEPROM_read_value;
-char EEPROM_read_string_line1[16]; //buffer for line 1
-char EEPROM_read_string_line2[16]; //buffer for line 2
 
 //variable for toggling between 1hz and 2hz
 static int frequency_toggle = 0;
@@ -532,42 +530,27 @@ void TIM16_IRQHandler(void)
   //read from EEPROM
   //EEPROM_read_value = read_from_address(EEPROM_counter);
   EEPROM_read_value = EEPROM_data[EEPROM_counter];
-  uint8_t decimalValue = (uint8_t)EEPROM_read_value;
-  char displayString[16]; //buffer for the display string
+  
+  char decimalValue[16]; //buffer for the display string
 
 	// TODO: Change LED pattern; output 0x01 if the read SPI data is incorrect
+
+  //compare read and expecte
 
  
 
   //display the read value on the LCD
   //check if the read value is correct
-  // if (EEPROM_read_value!= EEPROM_data[EEPROM_counter])
-  // {
-  //   writeLCD("SPI ERROR!");
-  // }
-  // else
-  // {
-  snprintf(displayString, sizeof(displayString), "%d", EEPROM_read_value);
-  //   writeLCD(displayString);
-  // }
-  writeLCD(displayString);
-
-   // if (EEPROM_read_value != EEPROM_data[EEPROM_counter]) {
-  //   snprintf(EEPROM_read_string_line1, sizeof(EEPROM_read_string_line1), "EEPROM byte:");
-  //   snprintf(EEPROM_read_string_line2, sizeof(EEPROM_read_string_line2), "SPI ERROR!");
-  // }
-  // else{
-  //   snprintf(EEPROM_read_string_line1, sizeof(EEPROM_read_string_line1), "EEPROM byte:");
-   
-  //   //display second line with decimal value
-  //   snprintf(EEPROM_read_string_line2, sizeof(EEPROM_read_string_line2), decimalValue);
-    
-  // }
-  // //write string to LCD
-  // lcd_command(CLEAR);
-  // writeLCD(EEPROM_read_string_line1);
-  // lcd_command(LINE_TWO);
-  // writeLCD(EEPROM_read_string_line2);
+  if (EEPROM_read_value!= EEPROM_data[EEPROM_counter])
+  {
+    writeLCD("SPI ERROR!");
+  }
+  else
+  {
+    snprintf(decimalValue, sizeof(decimalValue), "%d", EEPROM_read_value);
+    writeLCD(decimalValue);
+  }
+  
 
   
   
