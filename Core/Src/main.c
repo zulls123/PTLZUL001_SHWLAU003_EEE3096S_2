@@ -63,7 +63,7 @@ TIM_HandleTypeDef htim16;
 /* USER CODE BEGIN PV */
 
 // TODO: Define input variables
-uint8_t EEPROM_data [6] = {0b10101010, 01010101, 11001100, 00110011, 11110000, 00001111};
+uint8_t EEPROM_data [6] = {0b10101010, 0b01010101, 0b11001100, 0b00110011, 0b11110000, 0b00001111};
 //ARR value for ADCtoCCR
 uint32_t ARR = 47999;
 //ADC value for pollADC anf ADCtoCCR
@@ -178,7 +178,7 @@ int main(void)
 
   
   //toggle LED7
-  HAL_GPIO_TogglePin(GPIOB, LED7_Pin);
+  //HAL_GPIO_TogglePin(GPIOB, LED7_Pin);
 
 	// TODO: Poll ADC
   adc_val = pollADC(); //reads the analog value from the potentiometer
@@ -192,7 +192,7 @@ int main(void)
   // Update PWM value
 	__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_3, CCR);
 
-  HAL_Delay(delay_time); //delay for the specified time (500ms or 1000ms)
+  //HAL_Delay(delay_time); //delay for the specified time (500ms or 1000ms)
 
     /* USER CODE END WHILE */
 
@@ -381,9 +381,8 @@ static void MX_TIM6_Init(void)
   htim6.Instance = TIM6;
   htim6.Init.Prescaler = 8000-1;
   htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
-  //htim6.Init.Period = 500-1;
-  //change period to delay_time - 1
-  htim6.Init.Period = delay_time - 1;
+  htim6.Init.Period = 500-1;
+  
   htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
   {
@@ -517,6 +516,10 @@ void TIM6_IRQHandler(void)
 
 	// Toggle LED7
 	HAL_GPIO_TogglePin(GPIOB, LED7_Pin);
+
+
+  
+
 }
 
 void TIM16_IRQHandler(void)
@@ -527,28 +530,46 @@ void TIM16_IRQHandler(void)
 	// TODO: Initialise a string to output second line on LCD
 
   //read from EEPROM
-  EEPROM_read_value = read_from_address(EEPROM_counter);
+  //EEPROM_read_value = read_from_address(EEPROM_counter);
+  EEPROM_read_value = EEPROM_data[EEPROM_counter];
   uint8_t decimalValue = (uint8_t)EEPROM_read_value;
+  char displayString[16]; //buffer for the display string
 
 	// TODO: Change LED pattern; output 0x01 if the read SPI data is incorrect
 
+ 
+
+  //display the read value on the LCD
   //check if the read value is correct
-  if (EEPROM_read_value != EEPROM_data[EEPROM_counter]) {
-    snprintf(EEPROM_read_string_line1, sizeof(EEPROM_read_string_line1), "EEPROM byte:");
-    snprintf(EEPROM_read_string_line2, sizeof(EEPROM_read_string_line2), "SPI ERROR!");
-  }
-  else{
-    snprintf(EEPROM_read_string_line1, sizeof(EEPROM_read_string_line1), "EEPROM byte:");
+  // if (EEPROM_read_value!= EEPROM_data[EEPROM_counter])
+  // {
+  //   writeLCD("SPI ERROR!");
+  // }
+  // else
+  // {
+  snprintf(displayString, sizeof(displayString), "%d", EEPROM_read_value);
+  //   writeLCD(displayString);
+  // }
+  writeLCD(displayString);
+
+   // if (EEPROM_read_value != EEPROM_data[EEPROM_counter]) {
+  //   snprintf(EEPROM_read_string_line1, sizeof(EEPROM_read_string_line1), "EEPROM byte:");
+  //   snprintf(EEPROM_read_string_line2, sizeof(EEPROM_read_string_line2), "SPI ERROR!");
+  // }
+  // else{
+  //   snprintf(EEPROM_read_string_line1, sizeof(EEPROM_read_string_line1), "EEPROM byte:");
    
-    //display second line with decimal value
-    snprintf(EEPROM_read_string_line2, sizeof(EEPROM_read_string_line2), decimalValue);
+  //   //display second line with decimal value
+  //   snprintf(EEPROM_read_string_line2, sizeof(EEPROM_read_string_line2), decimalValue);
     
-  }
-  //write string to LCD
-  lcd_command(CLEAR);
-  writeLCD(EEPROM_read_string_line1);
-  lcd_command(LINE_TWO);
-  writeLCD(EEPROM_read_string_line2);
+  // }
+  // //write string to LCD
+  // lcd_command(CLEAR);
+  // writeLCD(EEPROM_read_string_line1);
+  // lcd_command(LINE_TWO);
+  // writeLCD(EEPROM_read_string_line2);
+
+  
   
 
   //update counter and reset if it reaches the end of the array
@@ -562,7 +583,10 @@ void TIM16_IRQHandler(void)
 void writeLCD(char *char_in){
   delay(3000);
 
-  //lcd_command(CLEAR);
+  lcd_command(CLEAR);
+  //lcd_putstring(char_in);
+  lcd_putstring("EEPROM byte:");
+  lcd_command(LINE_TWO);
   lcd_putstring(char_in);
 
   
