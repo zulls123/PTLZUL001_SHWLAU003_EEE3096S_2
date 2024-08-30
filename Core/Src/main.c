@@ -80,6 +80,9 @@ uint8_t EEPROM_read_value;
 char EEPROM_read_string_line1[16]; //buffer for line 1
 char EEPROM_read_string_line2[16]; //buffer for line 2
 
+//variable for toggling between 1hz and 2hz
+static int frequency_toggle = 0;
+
 
 
 /* USER CODE END PV */
@@ -173,6 +176,10 @@ int main(void)
   while (1)
   {
 
+  
+  //toggle LED7
+  HAL_GPIO_TogglePin(GPIOB, LED7_Pin);
+
 	// TODO: Poll ADC
   adc_val = pollADC(); //reads the analog value from the potentiometer
 
@@ -184,6 +191,8 @@ int main(void)
 
   // Update PWM value
 	__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_3, CCR);
+
+  HAL_Delay(delay_time); //delay for the specified time (500ms or 1000ms)
 
     /* USER CODE END WHILE */
 
@@ -372,7 +381,9 @@ static void MX_TIM6_Init(void)
   htim6.Instance = TIM6;
   htim6.Init.Prescaler = 8000-1;
   htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim6.Init.Period = 500-1;
+  //htim6.Init.Period = 500-1;
+  //change period to delay_time - 1
+  htim6.Init.Period = delay_time - 1;
   htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
   {
@@ -478,7 +489,7 @@ void EXTI0_1_IRQHandler(void)
 	// TODO: Add code to switch LED7 delay frequency
   current_time = HAL_GetTick();
 
-  if((current_time - previous_time) > 500) //check that button press is not too fast
+  if((current_time - previous_time) >= 100) //check that button press is not too fast
   {
     if(delay_time == 500) //if the frequency is 2Hz, change to 1Hz
     
@@ -490,7 +501,11 @@ void EXTI0_1_IRQHandler(void)
     
     previous_time = current_time; //update the previous time
   }
-   
+
+ 
+  
+
+
   // Acknowledge interrupt
 	HAL_GPIO_EXTI_IRQHandler(Button0_Pin); // Clear interrupt flags
 }
@@ -525,14 +540,10 @@ void TIM16_IRQHandler(void)
   else{
     snprintf(EEPROM_read_string_line1, sizeof(EEPROM_read_string_line1), "EEPROM byte:");
    
-    //display second line with ADC value
+    //display second line with decimal value
     snprintf(EEPROM_read_string_line2, sizeof(EEPROM_read_string_line2), decimalValue);
     
   }
-
-    
-    
-
   //write string to LCD
   lcd_command(CLEAR);
   writeLCD(EEPROM_read_string_line1);
@@ -560,12 +571,14 @@ void writeLCD(char *char_in){
 }
 
 // Get ADC value
-uint32_t pollADC(void){
+uint32_t pollADC(void){ //modified pollADC function
 	HAL_ADC_Start(&hadc); // start the adc
 	HAL_ADC_PollForConversion(&hadc, 100); // poll for conversion
+  //HAL_ADC_PollForConversion(&hadc, HAL_MAX_DELAY); // poll for conversion
 	uint32_t val = HAL_ADC_GetValue(&hadc); // get the adc value
 	HAL_ADC_Stop(&hadc); // stop adc
 	return val;
+  //return HAL_ADC_GetValue(&hadc);
 }
 
 // Calculate PWM CCR value
