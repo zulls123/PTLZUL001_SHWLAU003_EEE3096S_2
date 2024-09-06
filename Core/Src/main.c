@@ -379,7 +379,8 @@ static void MX_TIM6_Init(void)
   htim6.Instance = TIM6;
   htim6.Init.Prescaler = 8000-1;
   htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim6.Init.Period = 500-1;
+  //htim6.Init.Period = 500-1;
+  htim6.Init.Period = delay_time - 1;
   
   htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
@@ -486,21 +487,30 @@ void EXTI0_1_IRQHandler(void)
 	// TODO: Add code to switch LED7 delay frequency
   current_time = HAL_GetTick();
 
-  if((current_time - previous_time) >= 100) //check that button press is not too fast
+  if((current_time - previous_time) >= 500) //check that button press is not too fast
   {
     if(delay_time == 500) //if the frequency is 2Hz, change to 1Hz
-    
+    {
       delay_time = 1000;
-    
+      //set period to delay time
+      htim6.Init.Period = delay_time - 1;
+    }
     else
-    
+    {
       delay_time = 500; //if the frequency is 1Hz, change to 2Hz
+      //set period to delay time
+      htim6.Init.Period = delay_time - 1;
+    }
+
+    //update TIM6 with the new period - error checking
+    if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
+    {
+      Error_Handler();
+    }
+      
     
     previous_time = current_time; //update the previous time
   }
-
- 
-  
 
 
   // Acknowledge interrupt
@@ -515,9 +525,6 @@ void TIM6_IRQHandler(void)
 	// Toggle LED7
 	HAL_GPIO_TogglePin(GPIOB, LED7_Pin);
 
-
-  
-
 }
 
 void TIM16_IRQHandler(void)
@@ -530,30 +537,42 @@ void TIM16_IRQHandler(void)
   //read from EEPROM
   //EEPROM_read_value = read_from_address(EEPROM_counter);
   EEPROM_read_value = EEPROM_data[EEPROM_counter];
+  //EEPROM_read_value = read_from_address(EEPROM_data[EEPROM_counter]);
   
   char decimalValue[16]; //buffer for the display string
 
 	// TODO: Change LED pattern; output 0x01 if the read SPI data is incorrect
 
-  //compare read and expecte
+  //compare read and expected values
+  
+  
 
  
 
   //display the read value on the LCD
   //check if the read value is correct
+  // HAL_GPIO_WritePin(GPIOB, LED7_Pin, GPIO_PIN_SET);   // LED7 on
+  // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET); // Other LED off
+  // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET); // Other LED off
+  // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
+  // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
+  // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_RESET);
+  // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
+  // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+
+
   if (EEPROM_read_value!= EEPROM_data[EEPROM_counter])
   {
     writeLCD("SPI ERROR!");
+
+    //set LED7 on (high)
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
   }
   else
   {
     snprintf(decimalValue, sizeof(decimalValue), "%d", EEPROM_read_value);
     writeLCD(decimalValue);
   }
-  
-
-  
-  
 
   //update counter and reset if it reaches the end of the array
   EEPROM_counter = (EEPROM_counter + 1) % 6;
