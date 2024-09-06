@@ -18,12 +18,16 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "stm32f0xx_ll_rcc.h"
+#include "stm32f0xx_ll_system.h" 
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include "stm32f0xx.h"
 #include <lcd_stm32f0.c>
+#include "lcd_stm32f0.h"
+#include <stm32f051x8.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -59,6 +63,24 @@ TIM_HandleTypeDef htim16;
 /* USER CODE BEGIN PV */
 
 // TODO: Define input variables
+uint8_t EEPROM_data [6] = {0b10101010, 0b01010101, 0b11001100, 0b00110011, 0b11110000, 0b00001111};
+//ARR value for ADCtoCCR
+uint32_t ARR = 47999;
+//ADC value for pollADC anf ADCtoCCR
+uint32_t adc_val;
+
+//for calculating delay and detecting 1Hz (1000 ms) and 2Hz (500 ms) frequency
+uint32_t previous_time = 0;
+uint32_t current_time = 0;
+uint32_t delay_time = 500; //initial delay time is 500 ms
+
+//for reading from EEPROM
+static int EEPROM_counter = 0;
+uint8_t EEPROM_read_value;
+
+//variable for toggling between 1hz and 2hz
+static int frequency_toggle = 0;
+
 
 
 /* USER CODE END PV */
@@ -105,6 +127,9 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
+  //init_LCD();
+  // lcd_command(CLEAR);
+  // lcd_putstring("EEE3095S Prac 3");
 
   /* USER CODE BEGIN Init */
   /* USER CODE END Init */
@@ -136,6 +161,10 @@ int main(void)
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3); // Start PWM on TIM3 Channel 3
 
   // TODO: Write all bytes to EEPROM using "write_to_address"
+  for (uint16_t i = 0; i < 6; i++) {
+    write_to_address(i, EEPROM_data[i]);
+  }
+
   
   
   /* USER CODE END 2 */
@@ -145,14 +174,23 @@ int main(void)
   while (1)
   {
 
+  
+  //toggle LED7
+  //HAL_GPIO_TogglePin(GPIOB, LED7_Pin);
+
 	// TODO: Poll ADC
+  adc_val = pollADC(); //reads the analog value from the potentiometer
+
 
 
 	// TODO: Get CRR
+  CCR = ADCtoCCR(adc_val); //converts the analog value to a CCR value for the PWM signal
   
 
   // Update PWM value
 	__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_3, CCR);
+
+  //HAL_Delay(delay_time); //delay for the specified time (500ms or 1000ms)
 
     /* USER CODE END WHILE */
 
@@ -341,7 +379,9 @@ static void MX_TIM6_Init(void)
   htim6.Instance = TIM6;
   htim6.Init.Prescaler = 8000-1;
   htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim6.Init.Period = 500-1;
+  //htim6.Init.Period = 500-1;
+  htim6.Init.Period = delay_time - 1;
+  
   htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
   {
@@ -445,9 +485,35 @@ static void MX_GPIO_Init(void)
 void EXTI0_1_IRQHandler(void)
 {
 	// TODO: Add code to switch LED7 delay frequency
-	
-  
+  current_time = HAL_GetTick();
 
+  if((current_time - previous_time) >= 500) //check that button press is not too fast
+  {
+    if(delay_time == 500) //if the frequency is 2Hz, change to 1Hz
+    {
+      delay_time = 1000;
+      //set period to delay time
+      htim6.Init.Period = delay_time - 1;
+    }
+    else
+    {
+      delay_time = 500; //if the frequency is 1Hz, change to 2Hz
+      //set period to delay time
+      htim6.Init.Period = delay_time - 1;
+    }
+
+    //update TIM6 with the new period - error checking
+    if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
+    {
+      Error_Handler();
+    }
+      
+    
+    previous_time = current_time; //update the previous time
+  }
+
+
+  // Acknowledge interrupt
 	HAL_GPIO_EXTI_IRQHandler(Button0_Pin); // Clear interrupt flags
 }
 
@@ -458,6 +524,7 @@ void TIM6_IRQHandler(void)
 
 	// Toggle LED7
 	HAL_GPIO_TogglePin(GPIOB, LED7_Pin);
+
 }
 
 void TIM16_IRQHandler(void)
@@ -467,8 +534,47 @@ void TIM16_IRQHandler(void)
 
 	// TODO: Initialise a string to output second line on LCD
 
+  //read from EEPROM
+  EEPROM_read_value = read_from_address(EEPROM_counter);
+  //EEPROM_read_value = EEPROM_data[EEPROM_counter];
+  
+  char decimalValue[16]; //buffer for the display string
 
 	// TODO: Change LED pattern; output 0x01 if the read SPI data is incorrect
+
+  //compare read and expected values
+  
+  
+
+ 
+
+  //display the read value on the LCD
+  //check if the read value is correct
+  // HAL_GPIO_WritePin(GPIOB, LED7_Pin, GPIO_PIN_SET);   // LED7 on
+  // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET); // Other LED off
+  // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET); // Other LED off
+  // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
+  // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
+  // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_RESET);
+  // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
+  // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+
+
+  if (EEPROM_read_value!= EEPROM_data[EEPROM_counter])
+  {
+    writeLCD("SPI ERROR!");
+
+    //set LED7 on (high)
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
+  }
+  else
+  {
+    snprintf(decimalValue, sizeof(decimalValue), "%d", EEPROM_read_value);
+    writeLCD(decimalValue);
+  }
+
+  //update counter and reset if it reaches the end of the array
+  EEPROM_counter = (EEPROM_counter + 1) % 6;
 	
   
 
@@ -477,29 +583,39 @@ void TIM16_IRQHandler(void)
 // TODO: Complete the writeLCD function
 void writeLCD(char *char_in){
   delay(3000);
+
+  lcd_command(CLEAR);
+  //lcd_putstring(char_in);
+  lcd_putstring("EEPROM byte:");
+  lcd_command(LINE_TWO);
+  lcd_putstring(char_in);
+
+  
 	
   
 }
 
 // Get ADC value
-uint32_t pollADC(void){
+uint32_t pollADC(void){ //modified pollADC function
 	HAL_ADC_Start(&hadc); // start the adc
 	HAL_ADC_PollForConversion(&hadc, 100); // poll for conversion
+  //HAL_ADC_PollForConversion(&hadc, HAL_MAX_DELAY); // poll for conversion
 	uint32_t val = HAL_ADC_GetValue(&hadc); // get the adc value
 	HAL_ADC_Stop(&hadc); // stop adc
 	return val;
+  //return HAL_ADC_GetValue(&hadc);
 }
 
 // Calculate PWM CCR value
 uint32_t ADCtoCCR(uint32_t adc_val){
   // TODO: Calculate CCR value (val) using an appropriate equation
-
-	//return val;
+  uint32_t val = (adc_val * ARR) / 4095;
+	return val;
 }
 
 void ADC1_COMP_IRQHandler(void)
 {
-	//adc_val = HAL_ADC_GetValue(&hadc); // read adc value
+	adc_val = HAL_ADC_GetValue(&hadc); // read adc value
 	HAL_ADC_IRQHandler(&hadc); //Clear flags
 }
 
